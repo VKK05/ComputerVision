@@ -18,10 +18,10 @@ class ObjectDetection:
         print("Using Device: ", self.device)
         
         self.model = self.load_model()
-        
+        colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)]
         self.CLASS_NAMES_DICT = self.model.model.names
     
-        self.box_annotator = BoxAnnotator(color=ColorPalette(), thickness=3, text_thickness=3, text_scale=1.5)
+        self.box_annotator = BoxAnnotator(color=ColorPalette(colors), thickness=3, text_thickness=3, text_scale=1.5)
     
 
     def load_model(self):
